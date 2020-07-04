@@ -1,0 +1,147 @@
+ /* HTML options */
+ html {
+   scroll-behavior: smooth;
+   background-color: #ececec;
+ }
+
+ li, p {
+   max-width: 75ch;
+ }
+
+ h1, h2, h3, h4 {
+   padding-top: 32px;
+ }
+ 
+ /* Side navigation menu */
+.sidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 60px;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    padding-top: 60 px;
+    transition: 0.5s;
+}
+  
+/* Navigation menu links */
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: aquamarine;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Change navigation links on hover */
+.sidenav a:hover{
+  color:blue;
+}
+
+/* close button */
+.sidenav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  }
+  
+/* Style page content for sidebar */
+/* #main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+} */
+
+/* Horizontal Navigation Bar */
+.navbar {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-container{
+  background-color: #333;
+  position: sticky;
+  top: 0;
+}
+
+.navbar a {
+  margin-right: 24px ;
+  color: #ececec;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 150ms ease-in-out;
+}
+
+.navbar a:hover{
+  color: #1EAEDB;
+}
+
+.navbar::after{
+  content: normal;
+}
+
+/* Conference header */
+.conf_header{
+    text-align: center;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v16/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Dashed border */
+hr.dashed {
+  border-top: 3px dashed #bbb;
+}
+
+/* Dotted border */
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+
+.grid-item {
+  display: block;
+  align-items: center;
+  text-align: left;
+  font-size: 1em;
+}
+
+.user-name {
+  max-width: 40ch;
+  font-weight: bold;
+  text-align: inherit;
+}
+
+.user-info {
+  max-width: 40ch;
+  text-align: inherit;
+}
+
+img {
+  border: 1px solid black;
+}
