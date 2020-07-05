@@ -97,28 +97,29 @@
 }
 
 .page-title{
-  background-color: #2f3260;
+  padding: 16px 0px 0px 0px;
+  background-color: #2f3061;
   color: #ececec;
 }
 
 /* Dashed border */
 hr.dashed {
-  border-top: 3px dashed #2f3260;
+  border-top: 3px dashed #2f3061;
 }
 
 /* Dotted border */
 hr.dotted {
-  border-top: 3px dotted #2f3260;
+  border-top: 3px dotted #2f3061;
 }
 
 /* Solid border */
 hr.solid {
-  border-top: 3px solid #2f3260;
+  border-top: 3px solid #2f3061;
 }
 
 /* Rounded border */
 hr.rounded {
-  border-top: 8px solid #2f3260;
+  border-top: 8px solid #2f3061;
   border-radius: 5px;
 }
 
@@ -136,18 +137,24 @@ hr.rounded {
   font-size: 1em;
 }
 
+.user {
+  padding-top: 32px;
+}
+
 .user-name {
-  max-width: 75ch;
+  max-width: 40ch;
   font-weight: bold;
-  text-align: inherit;
+  text-align: center;
 }
 
 .user-info {
-  max-width: 75ch;
-  text-align: inherit;
+  max-width: 40ch;
+  text-align: center;
 }
 
 .user-photo {
+  width: 240px;
+  height: 240px;
   border: 1px solid black;
 }
 
