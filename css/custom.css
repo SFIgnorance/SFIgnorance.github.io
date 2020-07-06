@@ -1,4 +1,5 @@
- /* HTML options */
+ /* HTML options 
+ ----------------------------------------------------------------------*/
  html {
    scroll-behavior: smooth;
    background-color: #ececec;
@@ -12,7 +13,8 @@
    padding-top: 32px;
  }
 
-/* Horizontal Navigation Bar */
+/* Horizontal Navigation Bar 
+----------------------------------------------------------------------*/
 .navbar {
   z-index: 1;
   display: flex;
@@ -48,7 +50,8 @@
   color: #ececec;
 }
 
-/* Horizontal Dividing Lines */
+/* Horizontal Dividing Lines 
+----------------------------------------------------------------------*/
 hr.dashed {
   border-top: 3px dashed #2f3061;
 }
@@ -66,7 +69,8 @@ hr.rounded {
   border-radius: 5px;
 }
 
-/* Grid */
+/* Grid 
+----------------------------------------------------------------------*/
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,6 +84,8 @@ hr.rounded {
   font-size: 1em;
 }
 
+/* User (host) info 
+----------------------------------------------------------------------*/
 .user {
   padding-top: 32px;
 }
@@ -87,12 +93,11 @@ hr.rounded {
 .user-name {
   max-width: 40ch;
   font-weight: bold;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .user-info {
-  max-width: 40ch;
-  text-align: center;
+  max-width: 30ch;
 }
 
 .user-photo {
@@ -101,7 +106,8 @@ hr.rounded {
   border: 1px solid black;
 }
 
-/* Sections */
+/* Sections 
+----------------------------------------------------------------------*/
 .section-head{
   font-weight: bold;
   text-decoration: underline;
