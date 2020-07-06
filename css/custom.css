@@ -13,6 +13,13 @@
    padding-top: 32px;
  }
 
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: #2f3b61; }
+a:hover {
+  color: #2f3061; }
+
 /* Horizontal Navigation Bar 
 ----------------------------------------------------------------------*/
 .navbar {
@@ -37,7 +44,7 @@
 }
 
 .navbar a:hover{
-  color: #1EAEDB;
+  color: #7b7bb4;
 }
 
 .navbar::after{
