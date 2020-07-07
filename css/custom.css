@@ -113,9 +113,61 @@ hr.rounded {
   border: 1px solid black;
 }
 
+/* Scrollbox
+----------------------------------------------------------------------*/
+.ep-scrollbox {
+  width: auto;
+  height: 150px;
+  line-height: 3em;
+  overflow: scroll;
+  padding: 5px;
+}
+
+.ep-entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #9aa7d4;
+}
+
+.ep-head {
+  padding-right: 16px;
+}
+
+.ep-name {
+  font-weight: bold;
+  text-decoration: underline;
+  white-space: nowrap; 
+  width: 200px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ep-name:hover {
+  overflow: visible;
+  white-space: normal;
+}
+
+.ep-img {
+  max-height: 80px;
+  max-width: 80px;;
+}
+
+.ep-description {
+
+}
+
+.ep-links {
+
+}
+
 /* Sections 
 ----------------------------------------------------------------------*/
 .section-head{
   font-weight: bold;
   text-decoration: underline;
+}
+
+#faq {
+  padding-bottom: 32px;
 }
