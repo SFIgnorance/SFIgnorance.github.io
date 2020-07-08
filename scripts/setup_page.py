@@ -4,6 +4,7 @@ BeautifulSoup4 to parse Anchor.fm and YouTUbe to get links and populate the web 
 it is a pre-defined layout. 
 """
 import requests
+import bs4
 from bs4 import BeautifulSoup
 import podcastparser
 import urllib
@@ -20,6 +21,22 @@ anchor_fm_url = "https://anchor.fm/speaking-from-ignorance/"
 anchor_fm_rss = "https://anchor.fm/s/1f3b1374/podcast/rss"
 youtube_url = "https://www.youtube.com/channel/UCpnEGWBnxAErZxhZqZbRgNg/videos"
 
+# String formatting functions
+# ----------------------------------------------------------------------
+def format_description(description_html):
+    # Remove newline 'p'
+    soup = BeautifulSoup(description_html, 'html.parser')
+    paragraphs = soup.findAll('p')
+    descriptions = []
+
+    for paragraph in paragraphs:  # count number of lines until first <br>
+        if (isinstance(paragraph.contents[0], bs4.element.Tag)) or (paragraph.contents[0].startswith("Intro & ")):
+            break
+
+        descriptions.append(paragraph.contents[0])
+
+    return '<br>'.join(descriptions)
+    
 # Web scraping functions
 # ----------------------------------------------------------------------
 
@@ -51,15 +68,19 @@ def get_anchor_links_html():
 
         # Get description
         anchor_description = entry.find('div', class_=description_class)
-        anchor_description = anchor_description.findAll('div')[-1].contents[0].replace("\n", "<br>").replace("<br><br>", "<br>")
+        anchor_description = anchor_description.findAll('div')[-1].contents[0]
         anchor_descriptions.append(anchor_description)
 
     return anchor_links, anchor_headings, anchor_descriptions
 
 
 # Podcast parser version (RSS)
-def get_anchor_links_rss():
+def get_anchor_links_rss(newest=False):
     parsed = podcastparser.parse(anchor_fm_rss, urllib.request.urlopen(anchor_fm_rss))
+
+    if newest:  # just get the newest episode
+        return parsed['episodes'][0]
+
     episodes = parsed['episodes'][:10]
     anchor_links = []
     anchor_titles = []
@@ -68,10 +89,9 @@ def get_anchor_links_rss():
     for episode in episodes:
         anchor_links.append(episode['link'])
         anchor_titles.append(episode['title'])
-        anchor_descriptions.append(episode['description'])
+        anchor_descriptions.append(format_description(episode['description_html']))
    
     return anchor_links, anchor_titles, anchor_descriptions
-
 
 # HTML construct functions
 # ----------------------------------------------------------------------
@@ -94,15 +114,16 @@ def setup_scrollbox():
         entry += '            <div class="ep-name">' + title + '</div>\n'  # episode name
 
         # Info contains, image, description, links
-        entry += '            <div class="ep-info">'  # info header
+        entry += '            <div class="ep-info">\n'  # info header
 
         # Eventually, automatically populate images. for now, use placeholder
         entry += '              <img class="ep-img" src="images/logo/colour/Person_Colour.png">\n'  # image
-        entry += '              <div class="ep-description">' + description +  '</div>\n'  # description
+        entry += '              <div class="ep-description"><p>' + description +  '</p></div>\n'  # description
         entry += '              <div class="ep-links">\n'  # links header
 
         button_js = f'"window.open(\'{link}\', \'_blank\'); return false;"'
         entry += '                <button onclick=' + button_js + '>Audio</button>\n'  # audio link
+        entry += '                <button onclick=' + button_js + '>Video</button>\n'  # video link
 
         # Closing divs for the entries that are left open
         entry += '              </div>\n'  # close links div
@@ -116,13 +137,38 @@ def setup_scrollbox():
     return scrollbox
 
 
+def newest_episode_html():
+    episode = get_anchor_links_rss(newest=True)
+    title, description, link = episode['title'], episode['description_html'], episode['link']
+
+    episode_html = '\n'
+    episode_html += f'          <div class="ep-newest">\n'
+    episode_html += f'            <div class="ep-name">{title}</div>\n'
+    episode_html += f'            <div class="ep-info">\n'
+    episode_html += f'              <img class="ep-img" src="images/logo/colour/Person_Colour.png">\n'
+    episode_html += f'              <div class="ep-description"><p>{format_description(description)}</p></div>\n'
+    episode_html += f'              <div class="ep-links">\n'
+    button_js = f'"window.open(\'{link}\', \'_blank\'); return false;"'
+    episode_html += f'                <button onclick={button_js}>Audio</button>\n'
+    episode_html += f'                <button onclick={button_js}>Video</button>\n'
+    episode_html += f'              </div>\n'
+    episode_html += f'            </div>\n'
+    episode_html += f'          </div>\n'
+
+    return episode_html
+
+
 def speakers_html():
     # Setup the 'Podcast and Speakers' section
-    speakers_header = get_html_from_file("setup_html/speakers_header.html")
-    scrollbox = setup_scrollbox()
-    speakers_footer = get_html_from_file("setup_html/speakers_footer.html")
+    speakers_html = ''
+    speakers_html += get_html_from_file("setup_html/speakers_header_left.html")  # left side header
 
-    speakers_html = speakers_header + scrollbox + speakers_footer
+    # Add newest episode
+    speakers_html += newest_episode_html()
+
+    speakers_html += get_html_from_file("setup_html/speakers_header_right.html")  # right side header
+    speakers_html += setup_scrollbox()  # scrollbox of episodes
+    speakers_html += get_html_from_file("setup_html/speakers_footer.html")  # footer
 
     return speakers_html        
 

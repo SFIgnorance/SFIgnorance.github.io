@@ -1,5 +1,10 @@
+ /* Import fonts
+ ---------------------------------------------------------------------*/
+ @import url('https://fonts.google.com/specimen/Bebas+Neue');
+
+
  /* HTML options 
- ----------------------------------------------------------------------*/
+ ---------------------------------------------------------------------*/
  html {
    scroll-behavior: smooth;
    background-color: #ececec;
@@ -76,21 +81,6 @@ hr.rounded {
   border-radius: 5px;
 }
 
-/* Grid 
-----------------------------------------------------------------------*/
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 64px;
-}
-
-.grid-item {
-  display: block;
-  align-items: center;
-  text-align: left;
-  font-size: 1em;
-}
-
 /* User (host) info 
 ----------------------------------------------------------------------*/
 .user {
@@ -100,7 +90,6 @@ hr.rounded {
 .user-name {
   max-width: 40ch;
   font-weight: bold;
-  /* text-align: center; */
 }
 
 .user-info {
@@ -118,23 +107,29 @@ hr.rounded {
 .ep-scrollbox {
   width: auto;
   height: 500px;
+  border: 2px solid #333;
+  background-color: #9aa7d4;
   line-height: 3em;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 
 .ep-entry {
   padding: 0px 16px 0px 16px;
-  background-color: #9aa7d4;
   max-height: 128px;
 }
 
 .ep-info {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  overflow: hidden;
+  max-height: 88px;
+  padding: 0px 0px 4px 0px;
 }
 
 .ep-name {
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-decoration: underline;
   white-space: nowrap; 
@@ -155,17 +150,68 @@ hr.rounded {
 
 .ep-description {
   padding: 0px 8px 0px 8px;
-  white-space: nowrap;
-  width: auto;
-  overflow: hidden;
+  overflow-y: auto;
   text-overflow: ellipsis;
+  width: 300ch;
+  max-width: 300ch;
+}
+
+.ep-description p {
+  max-width: 120ch;
+  padding: 0px;
+  margin: 0px;
+  line-height: normal;
 }
 
 .ep-links {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 }
+
+.ep-links button {
+  margin: 4px;
+}
+
+/* Newest Episode
+----------------------------------------------------------------------*/
+.ep-newest {
+  border: 1px solid #333;
+  background-color: #9aa7d4;
+  padding: 16px;
+}
+
+.ep-newest .ep-info {
+  max-height: 200px;
+}
+
+.ep-newest .ep-name{
+  font-size: 1.5em;
+  overflow: visible;
+}
+
+.ep-newest .ep-img {
+  max-height: 160px;
+  max-width: 160px;
+}
+.ep-newest .ep-description {
+
+}
+
+.ep-newest .ep-description p {
+  font-size: 1.5em;
+}
+
+.ep-newest .ep-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ep-newest .ep-links button {
+  margin: 4px;
+}
+
 
 /* Sections 
 ----------------------------------------------------------------------*/
@@ -176,4 +222,15 @@ hr.rounded {
 
 #contribute {
   padding-bottom: 32px;
+}
+
+/* Buttons 
+----------------------------------------------------------------------*/
+button {
+  background-color: #2f3061;
+  color: #ececec;
+}
+
+button:hover {
+  color: #9aa7d4;
 }
