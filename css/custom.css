@@ -120,25 +120,24 @@ hr.rounded {
   height: 150px;
   line-height: 3em;
   overflow: scroll;
-  padding: 5px;
 }
 
 .ep-entry {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  padding: 0px 16px 0px 16px;
   background-color: #9aa7d4;
 }
 
-.ep-head {
-  padding-right: 16px;
+.ep-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .ep-name {
   font-weight: bold;
   text-decoration: underline;
   white-space: nowrap; 
-  width: 200px; 
+  width: auto; 
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -154,11 +153,13 @@ hr.rounded {
 }
 
 .ep-description {
-
+  padding: 0px 8px 0px 8px;
 }
 
 .ep-links {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* Sections 
