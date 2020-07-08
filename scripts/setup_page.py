@@ -5,6 +5,8 @@ it is a pre-defined layout.
 """
 import requests
 from bs4 import BeautifulSoup
+import podcastparser
+import urllib
 
 
 # Output Options
@@ -15,16 +17,19 @@ output_html = "../index.html"  # Live!
 # URLs
 # ----------------------------------------------------------------------
 anchor_fm_url = "https://anchor.fm/speaking-from-ignorance/"
+anchor_fm_rss = "https://anchor.fm/s/1f3b1374/podcast/rss"
 youtube_url = "https://www.youtube.com/channel/UCpnEGWBnxAErZxhZqZbRgNg/videos"
 
 # Web scraping functions
 # ----------------------------------------------------------------------
+
+# BeautifulSoup version (HTML) (UNUSED)
 def scrape_page(url):
     page = requests.get(url)
     return BeautifulSoup(page.content, 'html.parser')
 
 
-def get_anchor_links():
+def get_anchor_links_html():
     anchor_soup = scrape_page(anchor_fm_url)
     entry_class = "styles__episodeFeedItem___1U6E2"
     image_class = "styles__episodeImage___tMifW"
@@ -46,11 +51,27 @@ def get_anchor_links():
 
         # Get description
         anchor_description = entry.find('div', class_=description_class)
-        anchor_description = anchor_description.findAll('div')[-1].contents[0]
+        anchor_description = anchor_description.findAll('div')[-1].contents[0].replace("\n", "<br>").replace("<br><br>", "<br>")
         anchor_descriptions.append(anchor_description)
 
-
     return anchor_links, anchor_headings, anchor_descriptions
+
+
+# Podcast parser version (RSS)
+def get_anchor_links_rss():
+    parsed = podcastparser.parse(anchor_fm_rss, urllib.request.urlopen(anchor_fm_rss))
+    episodes = parsed['episodes'][:10]
+    anchor_links = []
+    anchor_titles = []
+    anchor_descriptions = []
+
+    for episode in episodes:
+        anchor_links.append(episode['link'])
+        anchor_titles.append(episode['title'])
+        anchor_descriptions.append(episode['description'])
+   
+    return anchor_links, anchor_titles, anchor_descriptions
+
 
 # HTML construct functions
 # ----------------------------------------------------------------------
@@ -62,7 +83,7 @@ def get_html_from_file(path):
 
 
 def setup_scrollbox():
-    anchor_links, episode_titles, episode_descriptions = get_anchor_links()
+    anchor_links, episode_titles, episode_descriptions = get_anchor_links_rss()
     scrollbox = ''
     scrollbox += '        <div class="ep-scrollbox">\n'  # open scrollbox
 
