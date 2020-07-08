@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 
 # Output Options
 # ----------------------------------------------------------------------
-output_html = "../index_test.html"
+# output_html = "../index_test.html"  # Testing
+output_html = "../index.html"  # Live!
 
 # URLs
 # ----------------------------------------------------------------------
