@@ -12,6 +12,7 @@
 
  li, p {
    max-width: 75ch;
+   font-size: 1.2em;
  }
 
  h1, h2, h3, h4 {
@@ -49,7 +50,7 @@ a:hover {
 }
 
 .navbar a:hover{
-  color: #7b7bb4;
+  color: #9aa7d4;
 }
 
 .navbar::after{
@@ -145,7 +146,8 @@ hr.rounded {
 
 .ep-img {
   max-height: 80px;
-  max-width: 80px;;
+  max-width: 80px;
+  border: 1px solid #333;
 }
 
 .ep-description {

@@ -8,6 +8,7 @@ import bs4
 from bs4 import BeautifulSoup
 import podcastparser
 import urllib
+import os.path
 
 
 # Output Options
@@ -36,6 +37,25 @@ def format_description(description_html):
         descriptions.append(paragraph.contents[0])
 
     return '<br>'.join(descriptions)
+
+# Local file functions
+# ----------------------------------------------------------------------
+def get_speaker_image(episode_index, total_episodes):
+    images_directory = "images/speakers/"
+    # Naming scheme is 'ep_EpisodeNumber'
+    # Episode index is index counting backwards from ten latest episodes
+    episode_number = total_episodes - episode_index
+    episode_image = f'\"{images_directory}ep{episode_number}.png\"'
+    python_path = '../' + episode_image.replace('"', '')
+
+    # We have to check if the path exists from Python script location
+    # but return path from
+    if os.path.exists(python_path):
+        return episode_image
+    else:
+        return f'\"images/logo/colour/Person_Colour.png\"'
+
+    return episode_image
     
 # Web scraping functions
 # ----------------------------------------------------------------------
@@ -77,9 +97,10 @@ def get_anchor_links_html():
 # Podcast parser version (RSS)
 def get_anchor_links_rss(newest=False):
     parsed = podcastparser.parse(anchor_fm_rss, urllib.request.urlopen(anchor_fm_rss))
+    total_episodes = len(parsed['episodes'])
 
     if newest:  # just get the newest episode
-        return parsed['episodes'][0]
+        return parsed['episodes'][0], total_episodes
 
     episodes = parsed['episodes'][:10]
     anchor_links = []
@@ -91,7 +112,7 @@ def get_anchor_links_rss(newest=False):
         anchor_titles.append(episode['title'])
         anchor_descriptions.append(format_description(episode['description_html']))
    
-    return anchor_links, anchor_titles, anchor_descriptions
+    return anchor_links, anchor_titles, anchor_descriptions, total_episodes
 
 # HTML construct functions
 # ----------------------------------------------------------------------
@@ -103,7 +124,7 @@ def get_html_from_file(path):
 
 
 def setup_scrollbox():
-    anchor_links, episode_titles, episode_descriptions = get_anchor_links_rss()
+    anchor_links, episode_titles, episode_descriptions, num_episodes = get_anchor_links_rss()
     scrollbox = ''
     scrollbox += '        <div class="ep-scrollbox">\n'  # open scrollbox
 
@@ -117,7 +138,7 @@ def setup_scrollbox():
         entry += '            <div class="ep-info">\n'  # info header
 
         # Eventually, automatically populate images. for now, use placeholder
-        entry += '              <img class="ep-img" src="images/logo/colour/Person_Colour.png">\n'  # image
+        entry += f'              <img class="ep-img" src={get_speaker_image(i, num_episodes)}>\n'  # image
         entry += '              <div class="ep-description"><p>' + description +  '</p></div>\n'  # description
         entry += '              <div class="ep-links">\n'  # links header
 
@@ -138,14 +159,14 @@ def setup_scrollbox():
 
 
 def newest_episode_html():
-    episode = get_anchor_links_rss(newest=True)
+    episode, num_episodes = get_anchor_links_rss(newest=True)
     title, description, link = episode['title'], episode['description_html'], episode['link']
 
     episode_html = '\n'
     episode_html += f'          <div class="ep-newest">\n'
     episode_html += f'            <div class="ep-name">{title}</div>\n'
     episode_html += f'            <div class="ep-info">\n'
-    episode_html += f'              <img class="ep-img" src="images/logo/colour/Person_Colour.png">\n'
+    episode_html += f'              <img class="ep-img" src={get_speaker_image(0, num_episodes)}>\n'
     episode_html += f'              <div class="ep-description"><p>{format_description(description)}</p></div>\n'
     episode_html += f'              <div class="ep-links">\n'
     button_js = f'"window.open(\'{link}\', \'_blank\'); return false;"'
