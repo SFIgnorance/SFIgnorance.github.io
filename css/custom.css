@@ -145,8 +145,8 @@ hr.rounded {
 }
 
 .ep-img {
-  max-height: 80px;
-  max-width: 80px;
+  height: 80px;
+  width: 80px;
   border: 1px solid #333;
 }
 
@@ -189,12 +189,13 @@ hr.rounded {
 
 .ep-newest .ep-name{
   font-size: 1.5em;
-  overflow: visible;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ep-newest .ep-img {
-  max-height: 160px;
-  max-width: 160px;
+  height: 160px;
+  width: 160px;
 }
 .ep-newest .ep-description {
 
