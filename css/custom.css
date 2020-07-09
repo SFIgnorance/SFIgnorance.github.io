@@ -107,7 +107,7 @@ hr.rounded {
 ----------------------------------------------------------------------*/
 .ep-scrollbox {
   width: auto;
-  height: 500px;
+  height: 575px;
   border: 2px solid #333;
   background-color: #9aa7d4;
   line-height: 3em;
@@ -132,6 +132,7 @@ hr.rounded {
 .ep-name {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  font-size: 1.1em;
   text-decoration: underline;
   white-space: nowrap; 
   width: auto; 
@@ -219,7 +220,6 @@ hr.rounded {
 /* Sections 
 ----------------------------------------------------------------------*/
 .section-head{
-  font-weight: bold;
   text-decoration: underline;
 }
 
@@ -232,6 +232,7 @@ hr.rounded {
 button {
   background-color: #2f3061;
   color: #ececec;
+  transition: color 150ms ease-in-out;
 }
 
 button:hover {

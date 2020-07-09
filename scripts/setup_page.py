@@ -179,16 +179,26 @@ def newest_episode_html():
     return episode_html
 
 
+def overview_html():
+    # Setup 'overview' section
+    overview_html = ''
+    overview_html += get_html_from_file("setup_html/overview_header.html")
+
+    # Add newest episode
+    overview_html += newest_episode_html()
+
+    overview_html += get_html_from_file("setup_html/overview_footer.html")
+
+    return overview_html
+
 def speakers_html():
     # Setup the 'Podcast and Speakers' section
     speakers_html = ''
     speakers_html += get_html_from_file("setup_html/speakers_header_left.html")  # left side header
+    speakers_html += setup_scrollbox()  # scrollbox of episodes
 
-    # Add newest episode
-    speakers_html += newest_episode_html()
 
     speakers_html += get_html_from_file("setup_html/speakers_header_right.html")  # right side header
-    speakers_html += setup_scrollbox()  # scrollbox of episodes
     speakers_html += get_html_from_file("setup_html/speakers_footer.html")  # footer
 
     return speakers_html        
@@ -197,6 +207,7 @@ def speakers_html():
 def construct_page(output_html):
     # Construct the web page and print it to 'output_html'
     page = ''.join(html_before)
+    page += overview_html()
     page += speakers_html()
     page += ''.join(html_after)
     with open(output_html, 'w', encoding='utf-8') as outfile:
@@ -207,7 +218,7 @@ if __name__ == "__main__":
     # HTML static elements
     # ----------------------------------------------------------------------
     html_dir = "setup_html/"
-    static_elements_before = ['header.html', 'body_header.html', 'navbar.html', 'overview.html']
+    static_elements_before = ['header.html', 'body_header.html', 'navbar.html']
     static_elements_after = ['team.html', 'contribute.html', 'doc_end.html']
 
     # Get the HTML before and after the 'podcast episodes and speakers' section, which will be populated in this script
