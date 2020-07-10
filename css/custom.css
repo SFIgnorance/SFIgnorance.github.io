@@ -109,7 +109,7 @@ hr.rounded {
   width: auto;
   height: 575px;
   border: 2px solid #333;
-  background-color: #9aa7d4;
+  background-color: #b4bddb;
   line-height: 3em;
   overflow-y: scroll;
   overflow-x: auto;
@@ -180,7 +180,7 @@ hr.rounded {
 ----------------------------------------------------------------------*/
 .ep-newest {
   border: 1px solid #333;
-  background-color: #9aa7d4;
+  background-color: #b4bddb;
   padding: 16px;
 }
 
@@ -227,7 +227,7 @@ hr.rounded {
   padding-bottom: 32px;
 }
 
-/* Buttons 
+/* buttons 
 ----------------------------------------------------------------------*/
 button {
   background-color: #2f3061;
@@ -237,4 +237,8 @@ button {
 
 button:hover {
   color: #9aa7d4;
+}
+
+button:focus {
+  color: #ececec;
 }
