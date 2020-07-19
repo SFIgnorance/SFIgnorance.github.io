@@ -1,1 +1,3 @@
-document.querySelector("button .new-tab").onclick = ""
+const openLink = link => {
+    window.open(link, '_blank');
+}

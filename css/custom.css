@@ -108,7 +108,7 @@ hr.rounded {
 .ep-scrollbox {
   width: auto;
   height: 575px;
-  border: 2px solid #333;
+  border: 1px solid #333;
   background-color: #b4bddb;
   line-height: 3em;
   overflow-y: scroll;

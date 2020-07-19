@@ -142,7 +142,7 @@ def setup_scrollbox():
         entry += '              <div class="ep-description"><p>' + description +  '</p></div>\n'  # description
         entry += '              <div class="ep-links">\n'  # links header
 
-        button_js = f'"window.open(\'{link}\', \'_blank\'); return false;"'
+        button_js = f'"openLink(\'{link}\');"'
         entry += '                <button onclick=' + button_js + '>Audio</button>\n'  # audio link
         entry += '                <button onclick=' + button_js + '>Video</button>\n'  # video link
 
@@ -169,7 +169,7 @@ def newest_episode_html():
     episode_html += f'              <img class="ep-img" src={get_speaker_image(0, num_episodes)}>\n'
     episode_html += f'              <div class="ep-description"><p>{format_description(description)}</p></div>\n'
     episode_html += f'              <div class="ep-links">\n'
-    button_js = f'"window.open(\'{link}\', \'_blank\'); return false;"'
+    button_js = f'"openLink(\'{link}\');"'
     episode_html += f'                <button onclick={button_js}>Audio</button>\n'
     episode_html += f'                <button onclick={button_js}>Video</button>\n'
     episode_html += f'              </div>\n'
