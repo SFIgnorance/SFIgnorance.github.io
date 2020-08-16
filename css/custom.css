@@ -1,11 +1,11 @@
  /* Import fonts
  ---------------------------------------------------------------------*/
- @import url('https://fonts.google.com/specimen/Bebas+Neue');
+ /* @import url('https://fonts.google.com/specimen/Bebas+Neue'); */
 
 
  /* HTML options 
  ---------------------------------------------------------------------*/
- html {
+ /* html {
    scroll-behavior: smooth;
    background-color: #ececec;
  }
@@ -17,14 +17,14 @@
 
  h1, h2, h3, h4 {
    padding-top: 32px;
- }
+ } */
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-a {
+/* a {
   color: #2f3b61; }
 a:hover {
-  color: #2f3061; }
+  color: #2f3061; } */
 
 /* Horizontal Navigation Bar 
 ----------------------------------------------------------------------*/
@@ -109,7 +109,8 @@ hr.rounded {
   width: auto;
   height: 575px;
   border: 1px solid #333;
-  background-color: #b4bddb;
+  /* background-color: #b4bddb; */
+  background-color: #2f3061;
   line-height: 3em;
   overflow-y: scroll;
   overflow-x: auto;
@@ -179,8 +180,11 @@ hr.rounded {
 /* Newest Episode
 ----------------------------------------------------------------------*/
 .ep-newest {
+  width: 50%;
+  margin: auto;
   border: 1px solid #333;
-  background-color: #b4bddb;
+  /* background-color: #b4bddb; */
+  /* background-color: #2f3061; */
   padding: 16px;
 }
 
@@ -230,9 +234,10 @@ hr.rounded {
 /* buttons 
 ----------------------------------------------------------------------*/
 button {
-  background-color: #2f3061;
+  /* background-color: #2f3061; */
+  /* background-color: #b4bddb; */
   color: #ececec;
-  transition: color 150ms ease-in-out;
+  /* transition: color 150ms ease-in-out; */
 }
 
 button:hover {

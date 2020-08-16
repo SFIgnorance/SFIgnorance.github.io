@@ -27,7 +27,7 @@
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="scripts/navigation.js"></script>
+  <script src="scripts/buttons.js"></script>
 
 </head>  <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -55,7 +55,7 @@
         <h4>What is Speaking From Ignorance?</h4>
       </div>
       <div class="five columns offset-by-one section-head">
-        <h4>Where To Find Us</h4>
+        <h4>Most Recent Episode</h4>
       </div>
     </div>
     <div class="row">
@@ -77,53 +77,62 @@
         </p>
       </div>
       <div class="five columns offset-by-one">
-        <p>
-          You can submit questions for us to answer 
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScjW3daVBwMd0Qy2nERSV3k6AdKMD3Cf4fm5uvnqfzO-DsVxw/viewform">here</a>
-          (we encourage everyone to get involved!), and contact us on social media on
-          <ul>
-            <li><a href="https://www.facebook.com/SpeakingfromIgnorance">Facebook</a></li>
-            <li><a href="https://twitter.com/FromIgnorance">Twitter</a></li>
-            <li>Instagram</li>
-          </ul>
-        </p>
-      </div>
-    </div>
-    <hr class="solid">
-    <!-- Podcast and Speakers -->
-    <div class="row" id="podcast">
-      <div class="five columns offset-by-one">
-        <h4 class="section-head">Recent Speakers and Episodes</h4>
-        <div>
-          <p style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;">
-            Listen to all the episodes:
-            <button onclick="window.open('https://anchor.fm/speaking-from-ignorance', '_blank'); return false;">Anchor.fm</button>
-            <button onclick="window.open('https://open.spotify.com/show/37OP6OkxBEOjbjOp3ZXNMk', '_blank'); return false;">Spotify</button>
-            <button onclick="window.open('https://www.youtube.com/channel/UCpnEGWBnxAErZxhZqZbRgNg/videos', '_blank'); return false;">YouTube</button>
-          </p>
           <div class="ep-newest">
-            <div class="ep-name">Episode 10: Productive Climate Action (ft. Ayesha Tandon)</div>
+            <div class="ep-name">Episode 12: Genomics 101 (ft. James Ashford)</div>
             <div class="ep-info">
-              <img class="ep-img" src="images/speakers/ep10.png">
-              <div class="ep-description"><p>Today we're joined by climate science communicator, Ayesha Tandon. And how can we keep productive in these "unprecedented times"? </p></div>
+              <img class="ep-img" src="images/speakers/ep12.png">
+              <div class="ep-description"><p>James Ashford tells us about the exciting world of genomics.</p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-10-Productive-Climate-Action-ft--Ayesha-Tandon-eg8i07', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-10-Productive-Climate-Action-ft--Ayesha-Tandon-eg8i07', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-12-Genomics-101-ft--James-Ashford-ehs0k6');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-12-Genomics-101-ft--James-Ashford-ehs0k6');">Video</button>
               </div>
             </div>
           </div>
-        </div>
+      </div>
+    </div>
+    <hr class="solid">    <!-- Podcast and Speakers -->
+    <div class="row" id="podcast">
+
+      <div class="five columns offset-by-one">
+        <h4 class="section-head">Recent Speakers and Episodes</h4>
       </div>
       <div class="five columns offset-by-one">
+        <h4 class="section-head">Want More Content?</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="five columns offset-by-one">
         <div class="ep-scrollbox">
+          <div class="ep-entry">
+            <div class="ep-name">Episode 12: Genomics 101 (ft. James Ashford)</div>
+            <div class="ep-info">
+              <img class="ep-img" src="images/speakers/ep12.png">
+              <div class="ep-description"><p>James Ashford tells us about the exciting world of genomics.</p></div>
+              <div class="ep-links">
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-12-Genomics-101-ft--James-Ashford-ehs0k6');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-12-Genomics-101-ft--James-Ashford-ehs0k6');">Video</button>
+              </div>
+            </div>
+          </div>
+          <div class="ep-entry">
+            <div class="ep-name">Episode 11: Fried Pasta and Fried Circuits (ft. Max Antson)</div>
+            <div class="ep-info">
+              <img class="ep-img" src="images/speakers/ep11.png">
+              <div class="ep-description"><p>Today we're joined by machine learning engineer, Max Antson, who has a culinary hot take even worse than blueberry rice! </p></div>
+              <div class="ep-links">
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-11-Fried-Pasta-and-Fried-Circuits-ft--Max-Antson-egv2m5');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-11-Fried-Pasta-and-Fried-Circuits-ft--Max-Antson-egv2m5');">Video</button>
+              </div>
+            </div>
+          </div>
           <div class="ep-entry">
             <div class="ep-name">Episode 10: Productive Climate Action (ft. Ayesha Tandon)</div>
             <div class="ep-info">
               <img class="ep-img" src="images/speakers/ep10.png">
               <div class="ep-description"><p>Today we're joined by climate science communicator, Ayesha Tandon. And how can we keep productive in these "unprecedented times"? </p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-10-Productive-Climate-Action-ft--Ayesha-Tandon-eg8i07', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-10-Productive-Climate-Action-ft--Ayesha-Tandon-eg8i07', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-10-Productive-Climate-Action-ft--Ayesha-Tandon-eg8i07');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-10-Productive-Climate-Action-ft--Ayesha-Tandon-eg8i07');">Video</button>
               </div>
             </div>
           </div>
@@ -133,19 +142,19 @@
               <img class="ep-img" src="images/logo/colour/Person_Colour.png">
               <div class="ep-description"><p>This week we're joined by James Timpson who discusses the social stigmas facing male dancers. </p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-9-Dance-Dance-Education-ft--James-Timpson-eg1sr2', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-9-Dance-Dance-Education-ft--James-Timpson-eg1sr2', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-9-Dance-Dance-Education-ft--James-Timpson-eg1sr2');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-9-Dance-Dance-Education-ft--James-Timpson-eg1sr2');">Video</button>
               </div>
             </div>
           </div>
           <div class="ep-entry">
             <div class="ep-name">eps8.0_h0bby1st-h@ck3rs.mp3 (ft. Stijn van der Pol)</div>
             <div class="ep-info">
-              <img class="ep-img" src="images/logo/colour/Person_Colour.png">
+              <img class="ep-img" src="images/speakers/ep8.png">
               <div class="ep-description"><p>>ACCESSING MAINFRAME.......<br>>LOADING QUESTION: "WHAT'S SOMETHING NEW YOU'VE TRIED RECENTLY?".....<br>>LOADING GUEST: STIJN VAN DER POL.....<br>>END</p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/eps8-0_h0bby1st-hck3rs-mp3-ft--Stijn-van-der-Pol-efrq9l', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/eps8-0_h0bby1st-hck3rs-mp3-ft--Stijn-van-der-Pol-efrq9l', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/eps8-0_h0bby1st-hck3rs-mp3-ft--Stijn-van-der-Pol-efrq9l');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/eps8-0_h0bby1st-hck3rs-mp3-ft--Stijn-van-der-Pol-efrq9l');">Video</button>
               </div>
             </div>
           </div>
@@ -155,8 +164,8 @@
               <img class="ep-img" src="images/logo/colour/Person_Colour.png">
               <div class="ep-description"><p>How well can you picture something in your mind? Jacque discusses social mobility. </p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-7-Visualising-an-Employable-Future-efdb57', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-7-Visualising-an-Employable-Future-efdb57', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-7-Visualising-an-Employable-Future-efdb57');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-7-Visualising-an-Employable-Future-efdb57');">Video</button>
               </div>
             </div>
           </div>
@@ -166,8 +175,8 @@
               <img class="ep-img" src="images/logo/colour/Person_Colour.png">
               <div class="ep-description"><p>We chat about interesting places we've been and Daniel explains why direct imaging is the  ̶w̶o̶r̶s̶t̶  best exoplanet detection method. </p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-6-Direct-Imaging-is-Garbage--Genius-and-Heres-Why-ef1aia', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-6-Direct-Imaging-is-Garbage--Genius-and-Heres-Why-ef1aia', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-6-Direct-Imaging-is-Garbage--Genius-and-Heres-Why-ef1aia');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-6-Direct-Imaging-is-Garbage--Genius-and-Heres-Why-ef1aia');">Video</button>
               </div>
             </div>
           </div>
@@ -177,8 +186,8 @@
               <img class="ep-img" src="images/logo/colour/Person_Colour.png">
               <div class="ep-description"><p>In this house we stan The Last Jedi. Today we uncover the overlooked "genius" that is the Star Wars prequels, show that copyright laws are dumb and Holmes explains how you can become an award-winning actor. </p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-V-The-Copyright-Strikes-Back-eeqmgs', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-V-The-Copyright-Strikes-Back-eeqmgs', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-V-The-Copyright-Strikes-Back-eeqmgs');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-V-The-Copyright-Strikes-Back-eeqmgs');">Video</button>
               </div>
             </div>
           </div>
@@ -188,8 +197,8 @@
               <img class="ep-img" src="images/logo/colour/Person_Colour.png">
               <div class="ep-description"><p>Hey, remember Brexit? It was only a matter of time before we brought it up. Also we determine the best indoor and outdoor actvities. </p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-4-Indoor-Smuggling-in-Post-Brexit-Times-eeiuk0', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-4-Indoor-Smuggling-in-Post-Brexit-Times-eeiuk0', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-4-Indoor-Smuggling-in-Post-Brexit-Times-eeiuk0');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-4-Indoor-Smuggling-in-Post-Brexit-Times-eeiuk0');">Video</button>
               </div>
             </div>
           </div>
@@ -199,35 +208,42 @@
               <img class="ep-img" src="images/logo/colour/Person_Colour.png">
               <div class="ep-description"><p>Does the coronavirus spell the death of the cinema? And does blueberry rice make a good meal? The answers may surprise you!</p></div>
               <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-3-Blueberry-Rice---A-Cinema-Snack-ee4p2s', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-3-Blueberry-Rice---A-Cinema-Snack-ee4p2s', '_blank'); return false;">Video</button>
-              </div>
-            </div>
-          </div>
-          <div class="ep-entry">
-            <div class="ep-name">Episode 2: Seasonal Housing</div>
-            <div class="ep-info">
-              <img class="ep-img" src="images/logo/colour/Person_Colour.png">
-              <div class="ep-description"><p>Now with 100% more Sammy and 40% less running time. This week, we discuss the issue of homelessness and the housing market in the UK followed by a heated debate over which is the superior season.<br>Editor's note: Apologies for the poor audio quality of Sammy's recording. This will be fixed in future episodes.</p></div>
-              <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-2-Seasonal-Housing-edo6sh', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-2-Seasonal-Housing-edo6sh', '_blank'); return false;">Video</button>
-              </div>
-            </div>
-          </div>
-          <div class="ep-entry">
-            <div class="ep-name">Episode 1: Consumerism and Coronavirus</div>
-            <div class="ep-info">
-              <img class="ep-img" src="images/logo/colour/Person_Colour.png">
-              <div class="ep-description"><p>Welcome to the first episode of a new entry in an increasingly oversaturated market of podcasts. But what else are we going to do in the lockdown? In this episode we discuss the hot topic of the day, coronavirus, and its effect on consumerism.</p></div>
-              <div class="ep-links">
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-1-Consumerism-and-Coronavirus-edg24f', '_blank'); return false;">Audio</button>
-                <button onclick="window.open('https://anchor.fm/speaking-from-ignorance/episodes/Episode-1-Consumerism-and-Coronavirus-edg24f', '_blank'); return false;">Video</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-3-Blueberry-Rice---A-Cinema-Snack-ee4p2s');">Audio</button>
+                <button onclick="openLink('https://anchor.fm/speaking-from-ignorance/episodes/Episode-3-Blueberry-Rice---A-Cinema-Snack-ee4p2s');">Video</button>
               </div>
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="five columns offset-by-one">
+        <p>All our episodes are available on</p>
+        <p style="display: flex; flex-direction: row; justify-content: space-around; align-items: baseline;">
+          <button onclick="window.open('https://anchor.fm/speaking-from-ignorance', '_blank'); return false;">Anchor.fm</button>
+          <button onclick="window.open('https://open.spotify.com/show/37OP6OkxBEOjbjOp3ZXNMk', '_blank'); return false;">Spotify</button>
+          <button onclick="window.open('https://www.youtube.com/channel/UCpnEGWBnxAErZxhZqZbRgNg/videos', '_blank'); return false;">YouTube</button>
+        </p>
+        <p>We record in seasons of 10 episodes each, taking a small break between each season.</p>
+        <h5 class="section-head">Have a Question?</h5>
+        <p>
+          <p>Want to engage with the podcast? Submit a question and there's a chance it'll show up in an episode,
+            and we'll give you a shoutout if you leave us a name!
+          </p>
+          <p style="display: flex; flex-direction: row; justify-content: center;">
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScjW3daVBwMd0Qy2nERSV3k6AdKMD3Cf4fm5uvnqfzO-DsVxw/viewform', '_blank'); return false;">
+              Submit a Question
+            </button>
+          </p>
+        </p>
+        <h5 class="section-head">Contact Us on Social Media!</h5>
+        <p>We're a pretty social bunch and would love to hear from you! You can send us feedback about the podcast, 
+          suggestions for guests and topics, or just have a friendly chat!
+        </p>
+        <p style="display: flex; flex-direction: row; justify-content: space-around; align-items: baseline;">
+          <button onclick="window.open('https://www.facebook.com/SpeakingfromIgnorance', '_blank'); return false;">Facebook</button>
+          <button onclick="window.open('https://twitter.com/FromIgnorance', '_blank'); return false;">Twitter</button>
+          <button onclick="window.open('https://instagram.com/FromIgnorance', '_blank'); return false;">Instagram</button>
+        </p>
+      </div>
       </div>
     </div>
     <hr class="solid">    <!-- Team -->
@@ -280,7 +296,7 @@
         <div class="user-name">
           <h5>Sammy</h5>
         </div>
-        <img class="user-photo" src="images/logo/colour/Person_Colour.png">
+        <img class="user-photo" src="images/team/sammy.png">
         <div class="user-info">
           Sammy is a High Energy Particle Physics PhD Student currently completing a placement at the Large Hadron
            Collider (LHC at CERN). Sammy enjoys working on his home-forge and is our resident communism enthusiast.
@@ -293,8 +309,8 @@
         </div>
         <img class="user-photo" src="images/team/sid.png">
         <div class="user-info">
-          Sid is an Astrophysics PhD Student at the University of Heidelberg and is meant to be modelling the 
-          atmospheres of stars. He is a string instrument enthusiast and is also trained in classical Indian singing.
+          Sid is an Astrophysics PhD Student at the University of Heidelberg modelling the 
+          atmospheres of stars. He is a string instrument enthusiast and avid singer.
           So far, Sid's lived in three different countries.
         </div>
       </div>
