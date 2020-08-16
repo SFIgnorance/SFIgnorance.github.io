@@ -183,8 +183,7 @@ hr.rounded {
   width: 50%;
   margin: auto;
   border: 1px solid #333;
-  /* background-color: #b4bddb; */
-  /* background-color: #2f3061; */
+  background-color: #b4bddb;
   padding: 16px;
 }
 
@@ -234,10 +233,9 @@ hr.rounded {
 /* buttons 
 ----------------------------------------------------------------------*/
 button {
-  /* background-color: #2f3061; */
-  /* background-color: #b4bddb; */
+  background-color: #2f3061;
   color: #ececec;
-  /* transition: color 150ms ease-in-out; */
+  transition: color 150ms ease-in-out;
 }
 
 button:hover {

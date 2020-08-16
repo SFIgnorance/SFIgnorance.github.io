@@ -1,0 +1,198 @@
+/* Horizontal Navigation Bar 
+----------------------------------------------------------------------*/
+.navbar {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navbar-container{
+    background-color: #333;
+    position: sticky;
+    top: 0;
+  }
+  
+  .navbar a {
+    margin-right: 24px ;
+    color: #ececec;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 150ms ease-in-out;
+  }
+  
+  .navbar a:hover{
+    color: #9aa7d4;
+  }
+  
+  .navbar::after{
+    content: normal;
+  }
+  
+  .page-title{
+    padding: 16px 0px 0px 0px;
+    background-color: #2f3061;
+    color: #ececec;
+  }
+
+  
+  /* User (host) info 
+  ----------------------------------------------------------------------*/
+  .user {
+    padding-top: 32px;
+  }
+  
+  .user-name {
+    max-width: 40ch;
+    font-weight: bold;
+  }
+  
+  .user-info {
+    max-width: 30ch;
+  }
+  
+  .user-photo {
+    width: 240px;
+    height: 240px;
+    border: 1px solid black;
+  }
+  
+  /* Scrollbox
+  ----------------------------------------------------------------------*/
+  .ep-scrollbox {
+    width: auto;
+    height: 575px;
+    border: 1px solid #333;
+    /* background-color: #b4bddb; */
+    background-color: #2f3061;
+    line-height: 3em;
+    overflow-y: scroll;
+    overflow-x: auto;
+  }
+  
+  .ep-entry {
+    padding: 0px 16px 0px 16px;
+    max-height: 128px;
+  }
+  
+  .ep-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: hidden;
+    max-height: 88px;
+    padding: 0px 0px 4px 0px;
+  }
+  
+  .ep-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: underline;
+    white-space: nowrap; 
+    width: auto; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .ep-name:hover {
+    overflow: visible;
+    white-space: normal;
+  }
+  
+  .ep-img {
+    height: 80px;
+    width: 80px;
+    border: 1px solid #333;
+  }
+  
+  .ep-description {
+    padding: 0px 8px 0px 8px;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    width: 300ch;
+    max-width: 300ch;
+  }
+  
+  .ep-description p {
+    max-width: 120ch;
+    padding: 0px;
+    margin: 0px;
+    line-height: normal;
+  }
+  
+  .ep-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .ep-links button {
+    margin: 4px;
+  }
+  
+  /* Newest Episode
+  ----------------------------------------------------------------------*/
+  .ep-newest {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #333;
+    padding: 16px;
+  }
+  
+  .ep-newest .ep-info {
+    max-height: 200px;
+  }
+  
+  .ep-newest .ep-name{
+    font-size: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .ep-newest .ep-img {
+    height: 160px;
+    width: 160px;
+  }
+  .ep-newest .ep-description {
+  
+  }
+  
+  .ep-newest .ep-description p {
+    font-size: 1.3em;
+  }
+  
+  .ep-newest .ep-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .ep-newest .ep-links button {
+    margin: 4px;
+  }
+  
+  
+  /* Sections 
+  ----------------------------------------------------------------------*/
+  .section-head{
+    text-decoration: underline;
+  }
+  
+  #contribute {
+    padding-bottom: 32px;
+  }
+  
+  /* buttons 
+  ----------------------------------------------------------------------*/
+  button {
+    color: #ececec;
+  }
+  
+  button:hover {
+    color: #9aa7d4;
+  }
+  
+  button:focus {
+    color: #ececec;
+  }
