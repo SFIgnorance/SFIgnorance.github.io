@@ -218,8 +218,8 @@ if __name__ == "__main__":
     # HTML static elements
     # ----------------------------------------------------------------------
     html_dir = "setup_html/"
-    static_elements_before = ['header.html', 'body_header.html', 'navbar.html']
-    static_elements_after = ['team.html', 'contribute.html', 'doc_end.html']
+    static_elements_before = ['header.html', 'body_header.html']
+    static_elements_after = ['team.html', 'doc_end.html']
 
     # Get the HTML before and after the 'podcast episodes and speakers' section, which will be populated in this script
     html_before = [get_html_from_file(html_dir + path) for path in static_elements_before]
