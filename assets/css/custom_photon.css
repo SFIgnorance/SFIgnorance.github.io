@@ -60,19 +60,25 @@
   /* Scrollbox
   ----------------------------------------------------------------------*/
   .ep-scrollbox {
-    width: auto;
-    height: 575px;
+    width: 80%;
+    height: 550px;
+    margin: auto;
     border: 1px solid #333;
-    /* background-color: #b4bddb; */
     background-color: #2f3061;
+    border-radius: 10px;
     line-height: 3em;
     overflow-y: scroll;
     overflow-x: auto;
   }
   
   .ep-entry {
+    background-color: #629494;
+    border-radius: 10px;
     padding: 0px 16px 0px 16px;
-    max-height: 128px;
+    margin: 8px;
+    width: 100%;
+    height: auto;
+    max-height: 256px;
   }
   
   .ep-info {
@@ -80,7 +86,8 @@
     flex-direction: row;
     justify-content: flex-start;
     overflow: hidden;
-    max-height: 88px;
+    width: 100%;
+    height: auto;
     padding: 0px 0px 4px 0px;
   }
   
@@ -89,29 +96,36 @@
     font-weight: bold;
     font-size: 1.1em;
     text-decoration: underline;
-    white-space: nowrap; 
+    /* white-space: nowrap;  */
     width: auto; 
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
   }
   
   .ep-name:hover {
-    overflow: visible;
-    white-space: normal;
+    /* overflow: scroll; */
+    /* white-space: normal; */
   }
   
   .ep-img {
-    height: 80px;
-    width: 80px;
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+    max-height: 120px;
     border: 1px solid #333;
   }
   
   .ep-description {
     padding: 0px 8px 0px 8px;
-    overflow-y: auto;
+    overflow: hidden;
     text-overflow: ellipsis;
     width: 300ch;
     max-width: 300ch;
+  }
+
+  .ep-description:focus {
+    overflow: scroll;
+    white-space: normal;
   }
   
   .ep-description p {
@@ -128,13 +142,17 @@
   }
   
   .ep-links button {
-    margin: 4px;
+    margin-bottom: 4px;
+    max-width: 160px;
+    height: auto;
   }
   
   /* Newest Episode
   ----------------------------------------------------------------------*/
   .ep-newest {
-    width: 50%;
+    min-width: 280px;
+    width: 65%;
+    height: auto;
     margin: auto;
     border: 1px solid #333;
     padding: 16px;
@@ -151,11 +169,14 @@
   }
   
   .ep-newest .ep-img {
-    height: 160px;
-    width: 160px;
+    width: 15%;
+    height: auto;
+    margin: 1em;
   }
   .ep-newest .ep-description {
-  
+    padding: 0px 8px 0px 8px;
+    overflow-y: auto;
+    text-overflow: ellipsis;
   }
   
   .ep-newest .ep-description p {
@@ -190,9 +211,39 @@
   }
   
   button:hover {
-    color: #9aa7d4;
+    color: #727da5;
   }
   
   button:focus {
     color: #ececec;
   }
+  
+  /* Accordion
+  ----------------------------------------------------------------------*/
+  .accordion {
+    background-color: rgb(250, 250, 250);
+    opacity: 0.9;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    /* border: 1px dotted #444; */
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: rgb(225, 225, 225);
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: #629494;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
