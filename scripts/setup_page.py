@@ -194,11 +194,8 @@ def overview_html():
 def speakers_html():
     # Setup the 'Podcast and Speakers' section
     speakers_html = ''
-    speakers_html += get_html_from_file("setup_html/speakers_header_left.html")  # left side header
-    speakers_html += setup_scrollbox()  # scrollbox of episodes
-
-
-    speakers_html += get_html_from_file("setup_html/speakers_header_right.html")  # right side header
+    speakers_html += get_html_from_file("setup_html/speakers_header.html")  # left side header
+    speakers_html += setup_scrollbox()  # scrollbox of episode
     speakers_html += get_html_from_file("setup_html/speakers_footer.html")  # footer
 
     return speakers_html        
