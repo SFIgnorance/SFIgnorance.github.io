@@ -30,11 +30,17 @@ def format_description(description_html):
     paragraphs = soup.findAll('p')
     descriptions = []
 
-    for paragraph in paragraphs:  # count number of lines until first <br>
-        if (isinstance(paragraph.contents[0], bs4.element.Tag)) or (paragraph.contents[0].startswith("Intro & ")):
-            break
+    for paragraph in paragraphs:
+        try:
+            # print(paragraph.contents)
+            if (paragraph.contents[0].startswith("Music")):
+                break
+        except TypeError:
+            print("Skipping newline character")
+            continue
 
-        descriptions.append(paragraph.contents[0])
+        description = [str(content) for content in paragraph.contents]
+        descriptions.append(''.join(description))
 
     return '<br>'.join(descriptions)
 
