@@ -131,35 +131,41 @@ def get_html_from_file(path):
 
 def setup_scrollbox():
     anchor_links, episode_titles, episode_descriptions, num_episodes = get_anchor_links_rss()
-    scrollbox = ''
-    scrollbox += '        <div class="ep-scrollbox">\n'  # open scrollbox
+    scrollbox = '\n'
+    scrollbox += '            <div class="ep-scrollbox">\n'  # open scrollbox
 
     for i, (link, title, description) in enumerate(zip(anchor_links, episode_titles, episode_descriptions)):
-        entry = ''
+        entry = '\n'
         
-        entry += '          <div class="ep-entry">\n'  # entry header
-        entry += '            <div class="ep-name">' + title + '</div>\n'  # episode name
+        entry += '              <div class="ep-entry">\n'  # entry header
 
-        # Info contains, image, description, links
-        entry += '            <div class="ep-info">\n'  # info header
+        # Episode header contains title, description and image
+        entry += '                <div class="ep-header">\n'  # episode header
+        entry += '                  <div style="display: flex; flex-direction: column; justify-content: flex-start;">\n'  # extra div
+        entry += '                    <div class="ep-name">' + title + '</div>\n'  # episode name
+        entry += '                    <div class="ep-description"><p>' + description +  '</p></div>\n'  # description
+        entry += '                  </div>\n'  # end extra div
+        entry += f'                  <img class="ep-img" src={get_speaker_image(i, num_episodes)}>\n'  # image
+        entry += '                </div>\n'  # end episode header div
 
-        # Eventually, automatically populate images. for now, use placeholder
-        entry += f'              <img class="ep-img" src={get_speaker_image(i, num_episodes)}>\n'  # image
-        entry += '              <div class="ep-description"><p>' + description +  '</p></div>\n'  # description
-        entry += '              <div class="ep-links">\n'  # links header
+        # Episode info contains and links
+        entry += '                <div class="ep-info" \n'  # info header
 
-        button_js = f'"openLink(\'{link}\');"'
-        entry += '                <button onclick=' + button_js + '>Audio</button>\n'  # audio link
-        entry += '                <button onclick=' + button_js + '>Video</button>\n'  # video link
+        entry += '                  <div class="ep-links">\n'  # links header
+
+        # Get Anchor and YouTube (not yet up!) links
+        button_js = f'"openLink(\'{link}\');"'  # same link for both
+        entry += '                    <button onclick=' + button_js + '>Audio</button>\n'  # audio link
+        entry += '                    <button onclick=' + button_js + '>Video</button>\n'  # video link
 
         # Closing divs for the entries that are left open
-        entry += '              </div>\n'  # close links div
-        entry += '            </div>\n'  # close info div
-        entry += '          </div>\n'  # close entry div
+        entry += '                  </div>\n'  # close links div
+        entry += '                </div>\n'  # close info div
+        entry += '              </div>\n'  # close entry div
 
         scrollbox += entry
     
-    scrollbox += '        </div>\n'  # close scrollbox
+    scrollbox += '            </div>\n'  # close scrollbox
 
     return scrollbox
 
@@ -169,18 +175,30 @@ def newest_episode_html():
     title, description, link = episode['title'], episode['description_html'], episode['link']
 
     episode_html = '\n'
-    episode_html += f'          <div class="ep-newest">\n'
-    episode_html += f'            <div class="ep-name">{title}</div>\n'
-    episode_html += f'            <div class="ep-info">\n'
-    episode_html += f'              <img class="ep-img" src={get_speaker_image(0, num_episodes)}>\n'
-    episode_html += f'              <div class="ep-description"><p>{format_description(description)}</p></div>\n'
-    episode_html += f'              <div class="ep-links">\n'
+    episode_html += f'          <div class="ep-newest">\n'  # newest episode
+
+    # Episode header contains title and image
+    episode_html += f'            <div class="ep-header row">\n'  # header row
+    episode_html += f'              <div class="col-12 col-12-medium" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">\n'  # column div
+    episode_html += f'                <div class="ep-name">{title}</div>\n'  # episode title
+    episode_html += f'                <img class="ep-img" src={get_speaker_image(0, num_episodes)}>\n'  # episode image
+    episode_html += f'              </div>\n'  # end column div
+    episode_html += f'            </div>\n'  # end header row div
+
+    # Episode info contains description and links
+    episode_html += f'            <div class="ep-info row">\n'  # episode info row
+    episode_html += f'              <div class="col-12 col-12-medium" style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">\n'  # column div
+    episode_html += f'                <div class="ep-description"><p>{format_description(description)}</p></div>\n'
+    episode_html += f'                <div class="ep-links">\n'  # episode links
+
+		# Get button JS for Anchor and YouTube (not yet!) links
     button_js = f'"openLink(\'{link}\');"'
-    episode_html += f'                <button onclick={button_js}>Audio</button>\n'
-    episode_html += f'                <button onclick={button_js}>Video</button>\n'
-    episode_html += f'              </div>\n'
-    episode_html += f'            </div>\n'
-    episode_html += f'          </div>\n'
+    episode_html += f'                	<button onclick={button_js}>Audio</button>\n'  # audio button
+    episode_html += f'                	<button onclick={button_js}>Video</button>\n'  # video button
+    episode_html += f'                </div>\n'  # end episode links div
+    episode_html += f'            	</div>\n'  # end column div
+    episode_html += f'          	</div>\n'  # end info row div
+    episode_html += f'          </div>\n'  # end newest episode div
 
     return episode_html
 

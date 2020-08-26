@@ -79,13 +79,21 @@
     margin: 8px;
     width: 100%;
     height: auto;
-    max-height: 256px;
+    max-height: 300px;
+  }
+
+  .ep-header {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: center;
   }
   
   .ep-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-evenly; 
+    align-items: center;
     overflow: hidden;
     width: 100%;
     height: auto;
@@ -109,17 +117,20 @@
   }
   
   .ep-img {
-    width: 100%;
+    width: 30%;
     height: auto;
     max-width: 120px;
     max-height: 120px;
     border: 1px solid #333;
+    margin: 1em;
   }
   
   .ep-description {
     padding: 0px 8px 0px 8px;
     overflow-y: scroll;
+    overflow-x: hidden;
     text-overflow: ellipsis;
+    max-height: 50px;
     /* width: 80ch;
     max-width: 80ch; */
   }
@@ -137,7 +148,7 @@
   
   .ep-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
   }
   
