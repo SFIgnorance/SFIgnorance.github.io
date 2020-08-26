@@ -148,10 +148,8 @@ def setup_scrollbox():
         entry += f'                  <img class="ep-img" src={get_speaker_image(i, num_episodes)}>\n'  # image
         entry += '                </div>\n'  # end episode header div
 
-        # Episode info contains and links
-        entry += '                <div class="ep-info">\n'  # info header
-
-        entry += '                  <div class="ep-links">\n'  # links header
+        # Episode links
+        entry += '                <div class="ep-links">\n'  # links header
 
         # Get Anchor and YouTube (not yet up!) links
         button_js = f'"openLink(\'{link}\');"'  # same link for both
@@ -159,8 +157,7 @@ def setup_scrollbox():
         entry += '                    <button onclick=' + button_js + '>Video</button>\n'  # video link
 
         # Closing divs for the entries that are left open
-        entry += '                  </div>\n'  # close links div
-        entry += '                </div>\n'  # close info div
+        entry += '                </div>\n'  # close links div
         entry += '              </div>\n'  # close entry div
 
         scrollbox += entry

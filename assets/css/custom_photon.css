@@ -104,19 +104,7 @@
     justify-content: space-between; 
     align-items: center;
   }
-  
-  .ep-info {
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-evenly; 
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-    max-height: 128px;
-    padding: 0px 0px 4px 0px;
-  }
-  
+
   .ep-name {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -160,7 +148,7 @@
   .ep-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   
   .ep-links button {
