@@ -28,11 +28,28 @@
   .navbar::after{
     content: normal;
   }
-  
+
+  /* Page title
+  ----------------------------------------------------------------------*/
   .page-title{
     padding: 16px 0px 0px 0px;
     background-color: #2f3061;
     color: #ececec;
+    overflow: hidden;
+  }
+
+  .title-name{
+    width: 50%;
+    height: auto;
+    max-width: 240px;
+    max-height: 160px;
+  }
+
+  .title-logo{
+    width: 20%;
+    height: auto;
+    max-width: 120px;
+    max-height: 160px;
   }
 
   
@@ -75,17 +92,17 @@
   .ep-entry {
     background-color: #2D3262;
     border-radius: 10px;
-    padding: 0px 16px 0px 16px;
+    /* padding: 0px 16px 0px 16px; */
     margin: 8px;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
-    max-height: 300px;
+    max-height: 400px;
   }
 
   .ep-header {
     display: flex; 
     flex-direction: row; 
-    justify-content: flex-start; 
+    justify-content: space-between; 
     align-items: center;
   }
   
@@ -111,11 +128,6 @@
     padding: 8px;
   }
   
-  .ep-name:hover {
-    /* overflow: scroll; */
-    /* white-space: normal; */
-  }
-  
   .ep-img {
     width: 30%;
     height: auto;
@@ -131,8 +143,8 @@
     overflow-x: hidden;
     text-overflow: ellipsis;
     max-height: 50px;
-    /* width: 80ch;
-    max-width: 80ch; */
+    /* width: 15ch; */
+    max-width: 90%;
   }
 
   .ep-description:focus {
