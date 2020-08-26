@@ -124,19 +124,22 @@
     margin: 1em;
   }
   
-  .ep-description {
+  .ep-description-preview {
     padding: 0px 8px 0px 8px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     max-height: 50px;
     /* width: 15ch; */
     width: 90%;
   }
-
-  .ep-description:focus {
-    overflow: scroll;
-    white-space: normal;
+  
+  .ep-description {
+    padding: 0px 8px 0px 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 100px;
+    /* width: 15ch; */
+    width: 90%;
   }
   
   .ep-description p {
@@ -152,17 +155,19 @@
   }
   
   .ep-links button {
+    margin-top: 4px;
     margin-bottom: 4px;
     
     height: auto;
     max-width: 160px;
     max-height: 60px;
+    font-size: small;
   }
   
   /* Newest Episode
   ----------------------------------------------------------------------*/
   .ep-newest {
-    min-width: 320px;
+    min-width: 280px;
     width: 75%;
     height: auto;
     margin: auto;
@@ -188,6 +193,7 @@
     max-height: 160px;
     margin: 1em;
   }
+
   .ep-newest .ep-description {
     width: auto;
     max-height: 140px;
@@ -241,9 +247,9 @@
   /* Accordion
   ----------------------------------------------------------------------*/
   .accordion {
-    background-color: rgb(250, 250, 250);
+    background-color:#2D3262;
     opacity: 0.9;
-    color: #444;
+    /* color: #444; */
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -255,7 +261,7 @@
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    background-color: rgb(225, 225, 225);
+    /* background-color: rgb(225, 225, 225); */
   }
   
   /* Style the accordion panel. Note: hidden by default */
