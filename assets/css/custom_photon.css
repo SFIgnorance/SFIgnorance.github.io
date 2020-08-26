@@ -82,7 +82,6 @@
     margin: auto;
     border: 1px solid #333;
     background-color: #7d7d97;
-    /* background-image: url("images/overlay1.png"), url("../../images/header.jpg"); */
     border-radius: 10px;
     line-height: 3em;
     overflow-y: scroll;
@@ -144,7 +143,7 @@
     text-overflow: ellipsis;
     max-height: 50px;
     /* width: 15ch; */
-    max-width: 90%;
+    width: 90%;
   }
 
   .ep-description:focus {

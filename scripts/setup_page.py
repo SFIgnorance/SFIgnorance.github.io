@@ -141,7 +141,7 @@ def setup_scrollbox():
 
         # Episode header contains title, description and image
         entry += '                <div class="ep-header">\n'  # episode header
-        entry += '                  <div style="display: flex; flex-direction: column; justify-content: flex-start;">\n'  # extra div
+        entry += '                  <div style="display: flex; flex-direction: column; justify-content: flex-start; width: 90%;">\n'  # extra div
         entry += '                    <div class="ep-name">' + title + '</div>\n'  # episode name
         entry += '                    <div class="ep-description"><p>' + description +  '</p></div>\n'  # description
         entry += '                  </div>\n'  # end extra div
