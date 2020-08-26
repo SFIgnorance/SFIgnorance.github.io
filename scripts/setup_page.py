@@ -149,7 +149,7 @@ def setup_scrollbox():
         entry += '                </div>\n'  # end episode header div
 
         # Episode info contains and links
-        entry += '                <div class="ep-info" \n'  # info header
+        entry += '                <div class="ep-info>"\n'  # info header
 
         entry += '                  <div class="ep-links">\n'  # links header
 
