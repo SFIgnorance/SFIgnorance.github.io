@@ -1,1 +1,1 @@
-./update.sh `date`
+./update.sh `date +"%Y %b%m"`
