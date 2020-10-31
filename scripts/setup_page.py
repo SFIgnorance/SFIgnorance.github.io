@@ -61,8 +61,6 @@ def get_speaker_image(episode_index, total_episodes):
     else:
         return f'\"images/logo/colour/Person_Colour.png\"'
 
-    return episode_image
-    
 # Web scraping functions
 # ----------------------------------------------------------------------
 
